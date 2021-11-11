@@ -1,0 +1,251 @@
+{% extends 'base.html' %}
+
+{% block title %}Contact{% endblock title %}
+
+{% block body %}
+
+<!--<div class="container">
+  <form method="post" action="/contact">
+    {% csrf_token %}
+    Welcome {{request.user}}
+    <p>
+      This is the best website for Online Admission on this planet and you are very lucky to access it
+    </p>
+
+    <div class="form-group">
+      <lable for="name" style="font-size: 20px;">Name</label>
+        <input type="text" class="form-control" id="name" name="name" placeholder="Harry Potter">
+    </div>
+
+    
+  <div class="form-group">
+    <label for="image">Example file input</label>
+    <input type="file" class="form-control-file" name="image" id="image">
+  </div>
+
+
+    <div class="form-group">
+      <label for="image" style="font size: 20px;">Django Image Uploading</label>
+      <canvas id="canvas"></canvas>
+      <input type="file" class="form-control" id="inp" name="image">
+    </div>
+
+    <style>
+      .blueback {
+        background-color: blue;
+      }
+
+      .yellowback {
+        background-color: yellow;
+      }
+
+      canvas {
+        height: 100px;
+        width: 200px;
+        border: 1px solid #c3c3c3;
+      }
+    </style>
+
+  <script>
+      document.getElementById('inp').onchange = function (e) {
+        var img = new Image();
+        img.onload = draw;
+        img.onerror = failed;
+        img.src = URL.createObjectURL(this.files[0]);
+      };
+      function draw() {
+        var canvas = document.getElementById('canvas');
+        canvas.width = this.width;
+        canvas.height = this.height;
+        var ctx = canvas.getContext('2d');
+        ctx.drawImage(this, 0, 0);
+      }
+      function failed() {
+        console.error("The provided file couldn't be loaded as an Image media");
+      }
+    </script>
+    <ul>
+  {% for post in object_list %}
+    <h2>{{ post.title }}</h2>
+    <img src="{{ post.cover.url}}" alt="{{ post.title }}">
+  {% endfor %}
+</ul>
+    <a href="/logout">Logout</a>
+    <script src="" async defer></script>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+</div>-->
+<!--<html>
+<head>
+<meta charset="UTF-8">
+<title>Upload Images</title>
+</head>
+<body>
+
+<h1>Image Uploader</h1>
+<form enctype="multipart/form-data" method="POST" action="">
+{% csrf_token %}
+{{ form.as_p }}
+<input type="submit" value="Upload"/>
+</form>
+
+<br><br>
+<img src='{{ MEDIA_URL }}{{ image }}'>
+<br><br>
+</p>
+
+</body>
+</html>-->
+
+
+{% comment %} <form method="post" enctype="multipart/form-data"> {% endcomment %}
+  {% comment %} {% csrf_token %} {% endcomment %}
+   {% comment %} {{ form.as_p }} {% endcomment %}
+  {% comment %} <button type="submit">Upload</button> {% endcomment %}
+{% comment %} </form> {% endcomment %}
+{% comment %}  {% endcomment %}
+{% comment %} {% if img_obj %} {% endcomment %}
+  {% comment %} <h3>Succesfully uploaded : {{img_obj.name}}</h3> {% endcomment %}
+  {% comment %} <img src="{{ img_obj.image.url}}" alt="connect" style="max-height:300px"> {% endcomment %}
+{% comment %} {% endif %} {% endcomment %}
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>File Upload test</title>
+  <style>
+    .required
+  {
+      color: red;
+  }
+  </style>
+</head>
+<body>
+    <div class="container-fluid px-0 mb-3">
+  <img src="/static/img/7.jfif" class="d-block w-100 mx-0" alt="...">
+</div>
+<div class="container  mb-3 py-4">
+  <h1 style="position: absolute;
+           top: 100px;
+           left: 666px;">Addmission Form 1</h1>
+  <form method="post" enctype="multipart/form-data" action="/contact">
+    {% csrf_token %}
+    <div class="form-group">
+      <lable for="name" style="font-size: 20px;">Name</label> <span class="required">*</span>
+        <input type="text" class="form-control" id="name" name="name" placeholder="As per 10th marksheet">
+    </div>
+
+    <div class="form-group">
+      <lable for="father" style="font-size: 20px;">Father name</label> <span class="required">*</span>
+        <input type="text" class="form-control" id="father" name="father" placeholder="Harry Potter">
+    </div>
+
+    <div class="form-group">
+      <lable for="mother" style="font-size: 20px;">Mother name</label> <span class="required">*</span>
+        <input type="text" class="form-control" id="mother" name="mother" placeholder="Merry Potter">
+    </div>
+
+    <div class="form-group">
+      <label for="email" style="font-size: 20px;">Email address</label> <span class="required">*</span>
+      <input type="email" class="form-control" id="email" name="email" placeholder="name@example.com">
+    </div>
+
+    <div class="form-group">
+      <lable for="phone" style="font-size: 20px;">Contact Number</label> <span class="required">*</span>
+        <input type="phone" class="form-control" id="phone" name="phone" placeholder="Enter the Mobile Number">
+    </div>
+
+    <div class="form-group">
+      <lable for="phone1" style="font-size: 20px;">Contact Number(Alternate)</label> <span class="required">*</span>
+        <input type="phone" class="form-control" id="phone1" name="phone1" placeholder="Enter the Alternate Mobile Number">
+    </div>
+
+    <div class="form-group">
+      <lable for="MhtcetAppNo" style="font-size: 20px;">MHTCET Application Number</label> <span class="required">*</span>
+        <input type="number" class="form-control" id="MhtcetAppNo" name="MhtcetAppNo" placeholder="Enter the Application Number">
+    </div>
+
+    <div class="form-group">
+      <lable for="MhtcetPercentile" style="font-size: 20px;">MHTCET Percentile</label> <span class="required">*</span>
+        <input type="number" class="form-control" id="MhtcetPercentile" name="MhtcetPercentile" placeholder="Enter the Percentile">
+    </div>
+
+    <div class="form-group">
+      <lable for="MhtcetRank" style="font-size: 20px;">MHTCET Rank</label> <span class="required">*</span>
+        <input type="number" class="form-control" id="MhtcetRank" name="MhtcetRank" placeholder="Enter the Rank">
+    </div>
+
+    <div class="form-group">
+      <lable for="JeeAppNo" style="font-size: 20px;">JEE Application Number</label> <span class="required">*</span>
+        <input type="number" class="form-control" id="JeeAppNo" name="JeeAppNo" placeholder="Enter the Application Number">
+    </div>
+
+    <div class="form-group">
+      <lable for="JeePercentile" style="font-size: 20px;">JEE Percentile</label> <span class="required">*</span>
+        <input type="number" class="form-control" id="JeePercentile" name="JeePercentile" placeholder="Enter the Percentile">
+    </div>
+
+    <div class="form-group">
+      <lable for="JeeRank" style="font-size: 20px;">JEE Rank</label> <span class="required">*</span>
+        <input type="number" class="form-control" id="JeeRank" name="JeeRank" placeholder="Enter the Rank">
+    </div>
+
+    <div class="form-group">
+      <label for="Address1" style="font-size: 20px;">Address(Permanent)</label> <span class="required">*</span>
+      <textarea class="form-control" id="Address1" rows="3" name="Address1"
+        placeholder="Enter the Permanent Address"></textarea>
+    </div>
+
+    <div class="form-group">
+      <label for="Address2" style="font-size: 20px;">Address(Correspondance)</label> <span class="required">*</span>
+      <textarea class="form-control" id="Address2" rows="3" name="Address2"
+        placeholder="Enter the Correspondance Address"></textarea>
+    </div>
+
+    <div class="form-group">
+      <lable for="CollegeName" style="font-size: 20px;">12th College Name</label> <span class="required">*</span>
+        <input type="text" class="form-control" id="CollegeName" name="CollegeName" placeholder="Enter the 12th College Name">
+    </div>
+
+    <div class="form-group">
+      <lable for="Percentage" style="font-size: 20px;">12th Percentage</label> <span class="required">*</span>
+        <input type="number" class="form-control" id="Percentage" name="Percentage" placeholder="Enter the 12th Percentage">
+    </div>
+    
+    <div class="form-group">
+      <lable for="file" style="font-size: 20px;">CAP Id Certificate</label> <span class="required">*</span>
+        <input type="file" class="form-control" id="file" name="file" placeholder="Please upload CAP Id Certificate">
+    </div>
+
+    <div class="form-group">
+      <lable for="file1" style="font-size: 20px;">Leaving Certificate</label> <span class="required">*</span>
+        <input type="file" class="form-control" id="file1" name="file1" placeholder="Please upload Leaving Certificate">
+    </div>
+
+    <div class="form-group">
+      <lable for="Aadhar" style="font-size: 20px;">Aadhar Number</label> <span class="required">*</span>
+        <input type="number" class="form-control" id="Aadhar" name="Aadhar" placeholder="Enter the Aadhar Number">
+    </div>
+
+   
+    <div class="form-group">
+      <label for="desc" style="font-size: 20px;">Description</label> <span class="required">*</span>
+      <textarea class="form-control" id="desc" rows="3" name="desc"
+        placeholder="Tell me about what your Dream College"></textarea>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+ 
+
+</div>
+  
+</body>
+</html>
+
+{% endblock body %}
