@@ -21,8 +21,8 @@ from home.views import contact
 from home import views
 
 from django.views.static import serve
-from django.conf.urls import url
-
+# from django.conf.urls import url
+from django.urls import re_path
 #dummy
 #from django.conf import settings # new
 #from django.conf.urls.static import static # new
@@ -30,13 +30,13 @@ from django.conf.urls import url
 
 admin.site.site_header = "Online Admission Admin"
 admin.site.site_title = "Online Admission Admin Portal"
-admin.site.index_title = "Welcome to Sahil's Online Admission Managment System"
+admin.site.index_title = "Welcome to Rohit's Online Admission Managment System"
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('',include('home.urls')),
-    url(r'^media/(?P<path>.*)$', serve,{'document_root':       settings.MEDIA_ROOT}), 
-    url(r'^static/(?P<path>.*)$', serve,{'document_root': settings.STATIC_ROOT}),
+    re_path(r'^media/(?P<path>.*)$', serve,{'document_root':       settings.MEDIA_ROOT}), 
+    re_path(r'^static/(?P<path>.*)$', serve,{'document_root': settings.STATIC_ROOT}),
     # path('upload/', views.contact)
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
