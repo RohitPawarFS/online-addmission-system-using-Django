@@ -35,9 +35,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'r#e&+ld$*@)$9)@z1*n4ms3ow552(y4yv^c36(h+e7d)ay#$+z'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = ['rohitpawarfs.pythonanywhere.com']
+ALLOWED_HOSTS = ['127.0.0.1','rohitpawarfs.pythonanywhere.com']
 
 
 # Application definition
