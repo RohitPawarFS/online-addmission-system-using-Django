@@ -20,9 +20,9 @@ from django.conf.urls.static import static
 from home.views import contact
 from home import views
 
-from django.views.static import serve
+# from django.views.static import serve
 # from django.conf.urls import url
-from django.urls import re_path
+# from django.urls import re_path
 #dummy
 #from django.conf import settings # new
 #from django.conf.urls.static import static # new
@@ -35,8 +35,8 @@ admin.site.index_title = "Welcome to Rohit's Online Admission Managment System"
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('',include('home.urls')),
-    re_path(r'^media/(?P<path>.*)$', serve,{'document_root':       settings.MEDIA_ROOT}), 
-    re_path(r'^static/(?P<path>.*)$', serve,{'document_root': settings.STATIC_ROOT}),
+    # re_path(r'^media/(?P<path>.*)$', serve,{'document_root':       settings.MEDIA_ROOT}), 
+    # re_path(r'^static/(?P<path>.*)$', serve,{'document_root': settings.STATIC_ROOT}),
     # path('upload/', views.contact)
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
